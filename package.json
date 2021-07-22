@@ -1,0 +1,14 @@
+{
+  "name": "background-image-sync",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "pwa"
+  ],
+  "scripts": {
+    "start": "yarn workspaces -pR run start "
+  }
+}
