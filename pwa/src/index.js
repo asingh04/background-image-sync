@@ -3,6 +3,21 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator
+      .serviceWorker
+      .register('/sw.js')
+      .then(registeredSW => {
+        console.log('Service Worker registered');
+        console.log(registeredSW);
+      })
+      .catch(err => {
+        console.log('AN ERROR OCCURED!')
+        console.log(err);
+      })
+  })
+}
 
 ReactDOM.render(
   <React.StrictMode>
