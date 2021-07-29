@@ -9,6 +9,12 @@
     "pwa"
   ],
   "scripts": {
-    "start": "yarn workspaces -pR run start "
+    "start": "concurrently --kill-others-on-fail \"yarn backend\"  \"yarn pwa\"",
+    "backend": "yarn workspace backend start:dev",
+    "pwa": "yarn workspace pwa start",
+    "build": "yarn workspaces -pR run build"
+  },
+  "dependencies": {
+    "concurrently": "6.2.0"
   }
 }
