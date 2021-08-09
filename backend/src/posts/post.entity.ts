@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Tag } from "src/tags/tag.entity";
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class Post {
@@ -10,4 +11,7 @@ export class Post {
 
   @Column()
   description: string;
+
+  @OneToMany(() => Tag, tag => tag.name)
+  @Join
 }
